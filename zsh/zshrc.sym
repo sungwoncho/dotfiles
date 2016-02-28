@@ -2,7 +2,7 @@
 setopt NO_NOMATCH
 
 # Path to your oh-my-zsh installation.
-export ZSH=/Users/mikecho/.oh-my-zsh
+export ZSH=~/.oh-my-zsh
 
 # Set name of the theme to load.
 # Look in ~/.oh-my-zsh/themes/
@@ -52,7 +52,7 @@ plugins=()
 
 # User configuration
 
-export PATH=$PATH:"/usr/local/bin:/usr/local/sbin:~/bin:/Users/mikecho/.rvm/gems/ruby-2.2.2/bin:/Users/mikecho/.rvm/gems/ruby-2.2.2@global/bin:/Users/mikecho/.rvm/rubies/ruby-2.2.2/bin:/user/local/bin:/usr/local/sbin:/usr/local/mysql/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/X11/bin:/usr/local/git/bin:/usr/local/sbin:~/bin:/Users/mikecho/.rvm/gems/ruby-2.2.2/bin:/Users/mikecho/.rvm/gems/ruby-2.2.2@global/bin:/Users/mikecho/.rvm/rubies/ruby-2.2.2/bin:/user/local/bin:/usr/local/mysql/bin:/Users/mikecho/.rvm/bin:/Users/mikecho/.rvm/bin:/Users/mikecho/.rvm/bin"
+export PATH=$PATH:"/usr/local/bin:/usr/local/sbin:~/bin:~/.rvm/gems/ruby-2.2.2/bin:~/.rvm/gems/ruby-2.2.2@global/bin:~/.rvm/rubies/ruby-2.2.2/bin:/user/local/bin:/usr/local/sbin:/usr/local/mysql/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/X11/bin:/usr/local/git/bin:/usr/local/sbin:~/bin:~/.rvm/gems/ruby-2.2.2/bin:~/.rvm/gems/ruby-2.2.2@global/bin:~/.rvm/rubies/ruby-2.2.2/bin:/user/local/bin:/usr/local/mysql/bin:~/.rvm/bin:~/.rvm/bin:~/.rvm/bin"
 # export MANPATH="/usr/local/man:$MANPATH"
 
 source $ZSH/oh-my-zsh.sh
@@ -76,7 +76,7 @@ export EDITOR='vim'
 
 export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
 
-export NVM_DIR="/Users/mikecho/.nvm"
+export NVM_DIR="~/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
 
 # Configure node modules path so that they can be loaded in node REPL
