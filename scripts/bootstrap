@@ -2,7 +2,7 @@
 
 DOTFILES_ROOT=$(pwd -P)
 OH_MY_ZSH="$HOME"/.oh-my-zsh/
-VUNDLE="$HOME"/.vim/bundle/Vundle.vim
+VUNDLE="$HOME"/.vim/bundle/Vundle.vim/
 
 cd $HOME
 
@@ -50,7 +50,8 @@ switch_to_zsh() {
 }
 
 init_vundle() {
-  if [ ! -f "$VUNDLE" ]; then
+  if [ ! -d "$VUNDLE" ]; then
+    echo "Installing Vundle"
     git clone https://github.com/VundleVim/Vundle.vim.git "$VUNDLE"
     echo "Installed Vundle"
   fi
