@@ -1,6 +1,5 @@
 # Git aliases
 alias g='git'
-alias git='hub'
 alias ga='git add'
 alias ghb='git browse' # hub
 alias ghpr='git pull-request' # hub
