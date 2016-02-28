@@ -31,9 +31,20 @@ link_file() {
 }
 
 install_oh_my_zsh() {
-  if [ ! -f "$OH_MY_ZSH" ]; then
+  if [ ! -d "$OH_MY_ZSH" ]; then
     echo "Installing oh-my-zsh"
-    git clone https://github.com/robbyrussell/oh-my-zsh.git "$OH_MY_ZSH"
+    sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+  else
+    echo "oh-my-zsh is already installed"
+  fi
+}
+
+switch_to_zsh() {
+  if [[ "$SHELL" =~ "zsh" ]]; then
+    echo "Already using zsh"
+  else
+    chsh -s `which zsh`
+    echo "Switched the default shell to zsh"
   fi
 }
 
@@ -41,13 +52,14 @@ copy_file() {
   local src=$1 dst=$2
   local overwrite=true
 
-  if ["$overwrite" == "true"]; then
+  if [ "$overwrite" == "true" ]; then
     cp -rf "$src" "$dst"
     echo "Copied $src to $dst"
   fi
 }
 
 install_oh_my_zsh
+switch_to_zsh
 install_dotfiles
 copy_file "$DOTFILES_ROOT"/zsh/aliases.zsh "$OH_MY_ZSH"/custom/
 
