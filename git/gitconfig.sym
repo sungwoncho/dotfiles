@@ -1,0 +1,23 @@
+[user]
+	name = Sung Won Cho
+	email = mikeswcho@gmail.com
+[alias]
+	co = checkout
+	s = status -s
+	lg = log --oneline --decorate --all --graph
+	st = status
+	br = branch
+	git = lg
+	a = add
+[core]
+	editor = 'vim'
+	excludesfile = ~/.gitignore
+[color]
+	ui = true
+[filter "media"]
+	clean = git media clean %f
+	smudge = git media smudge %f
+	required = true
+[push]
+	default = simple
+	rebase = true
