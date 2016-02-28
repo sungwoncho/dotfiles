@@ -1,7 +1,8 @@
 #!/usr/bin/env bash
 
 DOTFILES_ROOT=$(pwd -P)
-OH_MY_ZSH="$HOME"/.oh-my-zsh
+OH_MY_ZSH="$HOME"/.oh-my-zsh/
+VUNDLE="$HOME"/.vim/bundle/Vundle.vim
 
 cd $HOME
 
@@ -48,6 +49,15 @@ switch_to_zsh() {
   fi
 }
 
+init_vundle() {
+  if [ ! -f "$VUNDLE" ]; then
+    git clone https://github.com/VundleVim/Vundle.vim.git "$VUNDLE"
+    echo "Installed Vundle"
+  fi
+
+  vim +PluginInstall +qall
+}
+
 copy_file() {
   local src=$1 dst=$2
   local overwrite=true
@@ -61,6 +71,7 @@ copy_file() {
 install_oh_my_zsh
 switch_to_zsh
 install_dotfiles
+init_vundle
 copy_file "$DOTFILES_ROOT"/zsh/aliases.zsh "$OH_MY_ZSH"/custom/
 
 echo "All installed"

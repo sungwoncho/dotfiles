@@ -1,0 +1,102 @@
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => Interface
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""
+let mapleader = ','
+syntax on	" Enable syntax highlighting
+
+set expandtab " Use spaces instead of tabs
+set smarttab
+
+" 1 tab == 2 spaces
+set shiftwidth=2
+set tabstop=2
+
+set ai  " Auto indent
+set si  " Smart indent
+set wrap  " Wrap lines
+
+set relativenumber  " Relative line numbers
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => Plugins
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""
+set nocompatible  " required by Vundler
+filetype off		" required by Vundler
+
+" Set the runtime path to include Vundle and initialize
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+
+" Let Vundle manage Vundle, required
+Plugin 'gmarik/Vundle.vim'
+
+" My bundles
+Plugin 'kien/ctrlp.vim'
+Plugin 'thoughtbot/vim-rspec'
+Plugin 'tpope/vim-rails'
+Plugin 'kchmck/vim-coffee-script'
+Plugin 'pangloss/vim-javascript'
+Plugin 'bling/vim-airline'
+Plugin 'terryma/vim-multiple-cursors'
+Plugin 'tpope/vim-fugitive'
+Plugin 'mileszs/ack.vim'
+Plugin 'wookiehangover/jshint.vim'
+
+" All of your Plugins must be added before the following line
+call vundle#end() " required
+filetype plugin indent on " required
+
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => Plugin specific mappings
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" vim-rspec
+map <leader>t :call RunCurrentSpecFile()<cr>
+map <leader>a :call RunAllSpecs()<cr>
+map <leader>n :call RunNearestSpec()<cr>
+
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => Plugin specific settings
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" ctrlp.vim
+let g:ctrlp_show_hidden = 1
+
+" vim-rspec
+let g:rspec_command = '!bin/spring rspec {spec}'
+
+" vim-airline
+let g:airline_theme = 'powerlineish'
+let g:airline#extensions#branch#enabled = 1
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => Vim mappings
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""
+map <leader>s <esc>:w<cr>
+imap <leader>s <esc>:w<cr>i
+nmap <leader>e :Explore<cr>
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => Vim settings
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""
+let g:netrw_liststyle=3 " Display tree view by default
+set laststatus=2 " Always display the status bar
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => Miscellaneous
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Rename current file
+function! RenameFile()
+  let old_name = expand('%')
+  let new_name = input('New file name: ', expand('%'), 'file')
+  if new_name != '' && new_name != old_name
+    exec ':saveas ' . new_name
+    exec 'silent !rm ' . old_name
+    redraw!
+  endif
+endfunction
+map <leader>r :call RenameFile()<cr>
+
+" Highlight extra whitespaces
+set list listchars=tab:»·,trail:·
+
