@@ -1,0 +1,57 @@
+#!/usr/bin/env bash
+
+DOTFILES_ROOT=$(pwd -P)
+OH_MY_ZSH="$HOME"/.oh-my-zsh
+
+cd $HOME
+
+set -e
+
+install_dotfiles() {
+  echo "Installing dotfiles"
+
+  for src in $(find -H "$DOTFILES_ROOT" -name '*.sym' -not -path '*.git*')
+  do
+    dst="$HOME/.$(basename "{$src%.*}")"
+    link_file "$src" "$dst"
+  done
+}
+
+link_file() {
+  local src=$1 dst=$2
+  local overwrite=true
+
+  if [ "$overwrite" == "true" ]; then
+    rm -rf "$dst"
+    echo "Removed $dst"
+  fi
+
+  ln -s "$1" "$2"
+  echo "Linked $1 to $2"
+}
+
+install_oh_my_zsh() {
+ # if [ ! -f "$OH_MY_ZSH" ]; then
+   # echo "Installing oh-my-zsh"
+  #  git clone git@github.com:robbyrussell/oh-my-zsh.git "$OH_MY_ZSH"
+ # fi
+  if [ -f "$OH_MY_ZSH" ]; then
+    echo "exists"
+  fi
+}
+
+copy_file() {
+  local src=$1 dst=$2
+  local overwrite=true
+
+  if ["$overwrite" == "true"]; then
+    cp -rf "$src" "$dst"
+    echo "Copied $src to $dst"
+  fi
+}
+
+install_oh_my_zsh
+install_dotfiles
+copy_file "$DOTFILES_ROOT"/zsh/aliases.zsh "$OH_MY_ZSH"/custom/
+
+echo "All installed"
