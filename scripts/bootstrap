@@ -12,7 +12,7 @@ install_dotfiles() {
 
   for src in $(find -H "$DOTFILES_ROOT" -name '*.sym' -not -path '*.git*')
   do
-    dst="$HOME/.$(basename "{$src%.*}")"
+    dst="$HOME/.$(basename "${src%.*}")"
     link_file "$src" "$dst"
   done
 }
@@ -31,12 +31,9 @@ link_file() {
 }
 
 install_oh_my_zsh() {
- # if [ ! -f "$OH_MY_ZSH" ]; then
-   # echo "Installing oh-my-zsh"
-  #  git clone git@github.com:robbyrussell/oh-my-zsh.git "$OH_MY_ZSH"
- # fi
-  if [ -f "$OH_MY_ZSH" ]; then
-    echo "exists"
+  if [ ! -f "$OH_MY_ZSH" ]; then
+    echo "Installing oh-my-zsh"
+    git clone https://github.com/robbyrussell/oh-my-zsh.git "$OH_MY_ZSH"
   fi
 }
 
