@@ -1,3 +1,9 @@
 # Dotfiles
 
-Work in progress
+Personal system configurations.
+
+## Install
+
+    ./scripts/bootstrap
+
+**It will overwrite all your current settings.**
