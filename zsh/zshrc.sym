@@ -74,14 +74,12 @@ export EDITOR='vim'
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
-export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
-
-export NVM_DIR="~/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
-
 # Configure node modules path so that they can be loaded in node REPL
-export NODE_PATH=~/.nvm/versions/node/v4.2.1/lib/node_modules/
+#export NODE_PATH=~/.nvm/versions/node/v4.2.1/lib/node_modules/
 
 # Set up custom theme using https://github.com/sindresorhus/pure
-autoload -U promptinit && promptinit
-prompt pure
+#autoload -U promptinit && promptinit
+#prompt pure
+
+export NVM_DIR=~/.nvm
+[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
