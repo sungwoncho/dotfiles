@@ -1,4 +1,4 @@
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""
+""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Interface
 """""""""""""""""""""""""""""""""""""""""""""""""""""""
 let mapleader = ','
@@ -15,7 +15,19 @@ set ai  " Auto indent
 set si  " Smart indent
 set wrap  " Wrap lines
 
-set relativenumber  " Relative line numbers
+"set relativenumber  " Relative line numbers
+
+function! NumberToggle()
+  if(&relativenumber == 1)
+    set norelativenumber
+    set number
+  else
+    set nonumber
+    set relativenumber
+  endif
+endfunc
+
+nnoremap <C-\> :call NumberToggle()<cr>
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Plugins
@@ -52,9 +64,9 @@ filetype plugin indent on " required
 " => Plugin specific mappings
 """""""""""""""""""""""""""""""""""""""""""""""""""""""
 " vim-rspec
-map <leader>t :call RunCurrentSpecFile()<cr>
-map <leader>a :call RunAllSpecs()<cr>
-map <leader>n :call RunNearestSpec()<cr>
+"map <leader>t :call RunCurrentSpecFile()<cr>
+"map <leader>a :call RunAllSpecs()<cr>
+"map <leader>n :call RunNearestSpec()<cr>
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""
