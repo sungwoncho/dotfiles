@@ -15,7 +15,7 @@ set ai  " Auto indent
 set si  " Smart indent
 set wrap  " Wrap lines
 
-"set relativenumber  " Relative line numbers
+set relativenumber  " Relative line numbers
 
 function! NumberToggle()
   if(&relativenumber == 1)
