@@ -53,6 +53,7 @@ Plugin 'mileszs/ack.vim'
 Plugin 'vim-airline/vim-airline-themes'
 Plugin 'mxw/vim-jsx'
 Plugin 'scrooloose/syntastic'
+Plugin 'jiangmiao/auto-pairs'
 
 " All of your Plugins must be added before the following line
 call vundle#end() " required
