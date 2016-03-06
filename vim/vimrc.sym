@@ -91,6 +91,7 @@ let g:syntastic_javascript_checkers = ['eslint']
 " => Vim mappings
 """""""""""""""""""""""""""""""""""""""""""""""""""""""
 map <leader>s <esc>:w<cr>
+map <leader>q <esc>:q<cr>
 imap <leader>s <esc>:w<cr>i
 nmap <leader>e :Explore<cr>
 imap jk <Esc>
