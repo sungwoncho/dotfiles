@@ -54,6 +54,12 @@ Plugin 'vim-airline/vim-airline-themes'
 Plugin 'mxw/vim-jsx'
 Plugin 'scrooloose/syntastic'
 Plugin 'jiangmiao/auto-pairs'
+" Snipmate and its dependencies
+Plugin 'MarcWeber/vim-addon-mw-utils'
+Plugin 'tomtom/tlib_vim'
+Plugin 'garbas/vim-snipmate'
+Plugin 'honza/vim-snippets'
+" Snipmate ends
 
 " All of your Plugins must be added before the following line
 call vundle#end() " required
