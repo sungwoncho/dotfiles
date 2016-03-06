@@ -93,9 +93,10 @@ let g:syntastic_javascript_checkers = ['eslint']
 map <leader>s <esc>:w<cr>
 imap <leader>s <esc>:w<cr>i
 nmap <leader>e :Explore<cr>
+imap jk <Esc>
+
 " Toggle paste mode
 set pastetoggle=<F2>
-
 """""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Vim settings
 """""""""""""""""""""""""""""""""""""""""""""""""""""""
