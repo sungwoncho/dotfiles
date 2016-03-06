@@ -4,6 +4,7 @@ Personal system configurations.
 
 ## Install
 
-    ./scripts/bootstrap
-
+* Set up by running `./scripts/bootstrap`
 **It will overwrite all your current settings.**
+
+* Install dependencies by running `./scripts/install`
