@@ -88,7 +88,7 @@ let g:syntastic_javascript_checkers = ['eslint']
 
 let g:UltiSnipsExpandTrigger="<tab>"
 
-autocmd FileType javascript UltiSnipsAddFiletypes html
+autocmd FileType javascript.jsx UltiSnipsAddFiletypes html
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Vim mappings
@@ -125,3 +125,5 @@ map <leader>r :call RenameFile()<cr>
 " Highlight extra whitespaces
 set list listchars=tab:»·,trail:·
 
+" Automatically reload a file when changed
+set autoread
