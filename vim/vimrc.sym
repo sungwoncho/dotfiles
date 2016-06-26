@@ -54,8 +54,9 @@ Plugin 'vim-airline/vim-airline-themes'
 Plugin 'mxw/vim-jsx'
 Plugin 'scrooloose/syntastic'
 Plugin 'jiangmiao/auto-pairs'
-Plugin 'SirVer/ultisnips'
+"Plugin 'SirVer/ultisnips'
 Plugin 'honza/vim-snippets'
+Plugin 'fatih/vim-go'
 
 " All of your Plugins must be added before the following line
 call vundle#end() " required
@@ -89,6 +90,28 @@ let g:syntastic_javascript_checkers = ['eslint']
 let g:UltiSnipsExpandTrigger="<tab>"
 
 autocmd FileType javascript.jsx UltiSnipsAddFiletypes html
+
+" vim-go
+au FileType go nmap <leader>r <Plug>(go-run)
+au FileType go nmap <leader>b <Plug>(go-build)
+au FileType go nmap <leader>t <Plug>(go-test)
+au FileType go nmap <leader>c <Plug>(go-coverage)
+
+" Show a list of interfaces which is implemented by the type under your cursor
+au FileType go nmap <Leader>f <Plug>(go-implements)
+
+" Show type info for the word under your cursor
+au FileType go nmap <Leader>i <Plug>(go-info)
+
+" Open the relevant Godoc for the word under the cursor
+au FileType go nmap <Leader>gd <Plug>(go-doc)
+au FileType go nmap <Leader>gv <Plug>(go-doc-vertical)
+
+" Open the Godoc in browser
+au FileType go nmap <Leader>gb <Plug>(go-doc-browser)
+
+" neocomplete
+let g:neocomplete#enable_at_startup = 1
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Vim mappings
