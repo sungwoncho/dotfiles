@@ -231,3 +231,7 @@ set completeopt-=preview
 " To use echodoc
 " https://github.com/Shougo/neocomplete.vim/issues/120#issuecomment-29281963
 set cmdheight=2
+
+" Enable backspace
+set backspace=2
+
