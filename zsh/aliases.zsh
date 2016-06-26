@@ -130,3 +130,4 @@ alias hr='heroku run'
 alias grp='grep'
 alias ..='cd ..'
 alias ...='cd ...'
+alias bt="~/.dotfiles/scripts/bootstrap" # Easily apply settings
