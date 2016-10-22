@@ -32,6 +32,9 @@ nnoremap <C-\> :call NumberToggle()<cr>
 " highlight search hits
 set hlsearch
 
+" Shortcut for clearing search highlight
+nnoremap <CR> :noh<CR><CR>
+
 """""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Plugins
 """""""""""""""""""""""""""""""""""""""""""""""""""""""

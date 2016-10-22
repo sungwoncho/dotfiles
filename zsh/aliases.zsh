@@ -116,6 +116,7 @@ alias dps='docker ps'
 alias db='docker build'
 alias dr='docker run'
 alias dm='docker-machine'
+alias dcom='docker-compose'
 
 # Other aliases
 alias at='atom .'
