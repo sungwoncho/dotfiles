@@ -65,6 +65,8 @@ Plugin 'honza/vim-snippets'
 Plugin 'fatih/vim-go'
 Plugin 'Shougo/neocomplete.vim'
 Plugin 'Shougo/echodoc'
+Plugin 'mattn/emmet-vim'
+Plugin 'tpope/vim-surround'
 
 Plugin 'Shougo/neosnippet'
 Plugin 'Shougo/neosnippet-snippets'
@@ -196,6 +198,8 @@ endif
 let g:neocomplete#sources#omni#input_patterns.perl = '\h\w*->\h\w*\|\h\w*::'
 
 
+" bind K to grep word under cursor
+nnoremap K :grep! "\b<C-R><C-W>\b"<CR>:cw<CR>
 
 " neosnippet
 " Plugin key-mappings.
@@ -263,4 +267,21 @@ set cmdheight=2
 
 " Enable backspace
 set backspace=2
+
+"" markdown
+autocmd FileType md set spell spelllang=en_us
+
+" Wrap visual selection in an XML comment
+au FileType html,xml nmap <leader>c <esc>:call CommentWrap()<cr>
+function! CommentWrap()
+  normal `>
+  if &selection == 'exclusive'
+    exe "normal i-->"
+  else
+    exe "normal a-->"
+  endif
+  normal `<
+  exe "normal i<!--"
+  normal `<
+endfunction
 
