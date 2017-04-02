@@ -50,7 +50,7 @@ Plugin 'gmarik/Vundle.vim'
 
 " My bundles
 Plugin 'kien/ctrlp.vim'
-Plugin 'kchmck/vim-coffee-script'
+"Plugin 'kchmck/vim-coffee-script'
 Plugin 'pangloss/vim-javascript'
 Plugin 'bling/vim-airline'
 Plugin 'terryma/vim-multiple-cursors'
@@ -284,4 +284,7 @@ function! CommentWrap()
   exe "normal i<!--"
   normal `<
 endfunction
+
+" indent on return
+inoremap <leader><CR> <CR><C-o>==<C-o>O
 

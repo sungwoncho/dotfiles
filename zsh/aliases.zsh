@@ -132,3 +132,9 @@ alias grp='grep'
 alias ..='cd ..'
 alias ...='cd ...'
 alias bt="~/.dotfiles/scripts/bootstrap" # Easily apply settings
+
+# tmux
+alias tm="tmux"
+alias tmls="tmux ls"
+alias tmat="tmux attach -t"
+
