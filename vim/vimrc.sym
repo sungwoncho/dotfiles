@@ -2,7 +2,7 @@
 " => Interface
 """""""""""""""""""""""""""""""""""""""""""""""""""""""
 let mapleader = ','
-syntax on	" Enable syntax highlighting
+syntax on " Enable syntax highlighting
 
 set expandtab " Use spaces instead of tabs
 set smarttab
@@ -122,6 +122,9 @@ au FileType go nmap <Leader>gv <Plug>(go-doc-vertical)
 
 " Open the Godoc in browser
 au FileType go nmap <Leader>gb <Plug>(go-doc-browser)
+
+let g:go_fmt_command = "gofmt"
+let g:syntastic_go_checkers = ['golint', 'govet', 'errcheck']
 
 " neocomplete
 let g:neocomplete#enable_at_startup = 1
@@ -285,6 +288,28 @@ function! CommentWrap()
   normal `<
 endfunction
 
-" indent on return
-inoremap <leader><CR> <CR><C-o>==<C-o>O
+" Configure cursor position after expanding an HTML tag
+function! Expander()
+  let line   = getline(".")
+  let col    = col(".")
+  let first  = line[col-2]
+  let second = line[col-1]
+  let third  = line[col]
+
+  if first ==# ">"
+    if second ==# "<" && third ==# "/"
+      return "\<CR>\<C-o>==\<C-o>O"
+
+    else
+      return "\<CR>"
+
+    endif
+
+  else
+    return "\<CR>"
+
+  endif
+
+endfunction
+au FileType html,js,jsx inoremap <expr> <CR> Expander()
 
