@@ -1,6 +1,7 @@
 [user]
 	name = Sung Won Cho
 	email = mikeswcho@gmail.com
+	signingkey = 72EC1BB951025ED7
 [alias]
 	co = checkout
 	s = status -s

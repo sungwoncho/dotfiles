@@ -67,9 +67,11 @@ Plugin 'Shougo/neocomplete.vim'
 Plugin 'Shougo/echodoc'
 Plugin 'mattn/emmet-vim'
 Plugin 'tpope/vim-surround'
+Plugin 'johngrib/vim-game-code-break'
 
 Plugin 'Shougo/neosnippet'
 Plugin 'Shougo/neosnippet-snippets'
+Plugin 'prettier/vim-prettier'
 
 " All of your Plugins must be added before the following line
 call vundle#end() " required
@@ -85,6 +87,7 @@ filetype plugin indent on " required
 " => Plugin specific settings
 """""""""""""""""""""""""""""""""""""""""""""""""""""""
 " ctrlp.vim
+let g:ctrlp_custom_ignore = 'node_modules\|DS_Store\|git'
 let g:ctrlp_show_hidden = 1
 
 " vim-airline

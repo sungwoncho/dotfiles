@@ -95,3 +95,4 @@ export PATH=${PATH}:${ANDROID_HOME}/platform-tools
 export LIBRARY_PATH=$LIBRARY_PATH:/usr/local/lib
 export C_INCLUDE_PATH=$C_INCLUDE_PATH:/usr/local/include
 
+export ethereum_home=${HOME}/dev/ethereum
