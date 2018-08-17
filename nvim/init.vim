@@ -52,7 +52,7 @@ Plug 'mxw/vim-jsx'
 Plug 'scrooloose/syntastic'
 Plug 'jiangmiao/auto-pairs'
 Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
-Plug 'mattn/emmet-vim'
+Plug 'mattn/emmet-vim', { 'for': ['javascript', 'jsx', 'html', 'css'] }
 Plug 'tpope/vim-surround'
 Plug 'prettier/vim-prettier'
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
@@ -140,9 +140,19 @@ endif
 " close vim if the only window left open is a NERDTree
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 
-" open a NERDTree automatically when vim starts up if no files were specified
-autocmd StdinReadPre * let s:std_in=1
-autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
+" emmet
+autocmd FileType javascript,jsx EmmetInstall
+
+let g:user_emmet_settings={
+\  'javascript.jsx' : {
+\    'extends': 'jsx',
+\    'default_attributes': {
+\      'label': [{'htmlFor': ''}],
+\      'class': {'className': ''},
+\    }
+\  },
+\}
+
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Vim mappings
