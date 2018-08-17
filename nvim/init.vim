@@ -49,12 +49,11 @@ Plug 'tpope/vim-fugitive'
 Plug 'mileszs/ack.vim'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'mxw/vim-jsx'
-Plug 'scrooloose/syntastic'
 Plug 'jiangmiao/auto-pairs'
 Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 Plug 'mattn/emmet-vim', { 'for': ['javascript', 'jsx', 'html', 'css'] }
 Plug 'tpope/vim-surround'
-Plug 'prettier/vim-prettier'
+Plug 'w0rp/ale'
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'Shougo/neosnippet.vim'
 Plug 'Shougo/neosnippet-snippets'
@@ -78,14 +77,25 @@ let g:ctrlp_show_hidden = 1
 let g:airline_theme = 'powerlineish'
 let g:airline#extensions#branch#enabled = 1
 
+" ale
+let g:ale_fixers = {}
+let g:ale_fixers['javascript'] = ['prettier']
+let g:ale_fix_on_save = 1
+let g:ale_javascript_prettier_use_local_config = 1
+
+let g:ale_linters = {
+\   'javascript': ['eslint'],
+\}
+
 " Use Syntastic to check syntax
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 1
-let g:syntastic_check_on_open = 1
-let g:syntastic_check_on_wq = 1
-let g:syntastic_enable_signs=1
-let g:syntastic_loc_list_height=3
-let g:syntastic_javascript_checkers = ['eslint']
+"let g:syntastic_always_populate_loc_list = 1
+"let g:syntastic_auto_loc_list = 1
+"let g:syntastic_check_on_open = 1
+"let g:syntastic_check_on_wq = 1
+"let g:syntastic_enable_signs=1
+"let g:syntastic_loc_list_height=3
+"let g:syntastic_javascript_checkers = ['eslint']
+"let g:syntastic_javascript_eslint_exe='$(yarn bin)/eslint'
 
 " vim-go
 au FileType go nmap <leader>r <Plug>(go-run)
@@ -107,7 +117,7 @@ au FileType go nmap <Leader>gv <Plug>(go-doc-vertical)
 au FileType go nmap <Leader>gb <Plug>(go-doc-browser)
 
 let g:go_fmt_command = "gofmt"
-let g:syntastic_go_checkers = ['golint', 'govet', 'errcheck']
+"let g:syntastic_go_checkers = ['golint', 'govet', 'errcheck']
 let g:go_metalinter_autosave = 1
 
 let g:go_auto_type_info = 1
@@ -140,6 +150,9 @@ endif
 " close vim if the only window left open is a NERDTree
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 
+" show hidden files
+let NERDTreeShowHidden=1
+
 " emmet
 autocmd FileType javascript,jsx EmmetInstall
 
@@ -152,7 +165,6 @@ let g:user_emmet_settings={
 \    }
 \  },
 \}
-
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Vim mappings
