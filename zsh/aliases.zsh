@@ -5,6 +5,7 @@ alias ghb='git browse' # hub
 alias ghpr='git pull-request' # hub
 alias gp='git push'
 alias gpoh='git push origin HEAD'
+alias gpuo='git push -u origin'
 alias gpod='git push origin --delete'
 alias gpf='git push -f'
 alias gpush='echo "Use gp" && git push'
@@ -120,9 +121,9 @@ alias dcom='docker-compose'
 
 # Other aliases
 alias at='atom .'
-alias v='vim'
-alias vm='vim .'
-alias za='vim $ZSH/custom/aliases.zsh'
+alias v='nvim'
+alias vm='nvim .'
+alias za='nvim $ZSH/custom/aliases.zsh'
 alias zaa='source ~/.zshrc'
 alias powa='powder applog'
 alias powr='powder restart'
