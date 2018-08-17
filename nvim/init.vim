@@ -15,7 +15,7 @@ set ai  " Auto indent
 set si  " Smart indent
 set wrap  " Wrap lines
 
-set relativenumber  " Relative line numbers
+set number relativenumber  " Relative line numbers
 
 function! NumberToggle()
   if(&relativenumber == 1)
@@ -23,7 +23,7 @@ function! NumberToggle()
     set number
   else
     set nonumber
-    set relativenumber
+    set number relativenumber
   endif
 endfunc
 
@@ -33,7 +33,7 @@ nnoremap <C-\> :call NumberToggle()<cr>
 set hlsearch
 
 " Shortcut for clearing search highlight
-nnoremap <CR> :noh<CR><CR>
+nnoremap <CR> :noh<CR>
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Plugins
@@ -136,10 +136,13 @@ if has('conceal')
   set conceallevel=2 concealcursor=niv
 endif
 
-" NERDTree
+" nerdtree
 " close vim if the only window left open is a NERDTree
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 
+" open a NERDTree automatically when vim starts up if no files were specified
+autocmd StdinReadPre * let s:std_in=1
+autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Vim mappings
