@@ -58,7 +58,7 @@ Plug 'prettier/vim-prettier'
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'Shougo/neosnippet.vim'
 Plug 'Shougo/neosnippet-snippets'
-"Plug 'scrooloose/nerdtree'
+Plug 'scrooloose/nerdtree'
 
 call plug#end()
 
@@ -136,13 +136,18 @@ if has('conceal')
   set conceallevel=2 concealcursor=niv
 endif
 
+" NERDTree
+" close vim if the only window left open is a NERDTree
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
+
+
 """""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Vim mappings
 """""""""""""""""""""""""""""""""""""""""""""""""""""""
 map <leader>s <esc>:w<cr>
 map <leader>q <esc>:q<cr>
 imap <leader>s <esc>:w<cr>i
-nmap <leader>e :Explore<cr>
+nmap <leader>e :NERDTreeToggle<cr>
 imap jk <Esc>
 
 " Toggle paste mode
@@ -152,7 +157,6 @@ tnoremap <Esc> <C-\><C-n>
 """""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Vim settings
 """""""""""""""""""""""""""""""""""""""""""""""""""""""
-let g:netrw_liststyle=3 " Display tree view by default
 set laststatus=2 " Always display the status bar
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""
