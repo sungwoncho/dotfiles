@@ -70,7 +70,7 @@ call plug#end()
 " => Plugin specific settings
 """""""""""""""""""""""""""""""""""""""""""""""""""""""
 " ctrlp.vim
-let g:ctrlp_custom_ignore = 'node_modules\|DS_Store\'
+let g:ctrlp_custom_ignore = 'node_modules\|DS_Store\|vendor|compiled'
 let g:ctrlp_show_hidden = 1
 
 " vim-airline
@@ -80,6 +80,7 @@ let g:airline#extensions#branch#enabled = 1
 " ale
 let g:ale_fixers = {}
 let g:ale_fixers['javascript'] = ['prettier']
+let g:ale_fixers['scss'] = ['prettier']
 let g:ale_fix_on_save = 1
 let g:ale_javascript_prettier_use_local_config = 1
 
@@ -119,13 +120,14 @@ au FileType go nmap <Leader>gb <Plug>(go-doc-browser)
 let g:go_fmt_command = "gofmt"
 "let g:syntastic_go_checkers = ['golint', 'govet', 'errcheck']
 let g:go_metalinter_autosave = 1
+let g:go_metalinter_deadline = "10s"
 
 let g:go_auto_type_info = 1
 set updatetime=150
 
 " ack.vim
 if executable('ag')
-  let g:ackprg = 'ag --vimgrep'
+  let g:ackprg = 'ag --vimgrep --ignore compiled --ignore-dir dist'
 endif
 
 " deoplete
@@ -257,3 +259,5 @@ function! Expander()
 endfunction
 au FileType html,js,jsx inoremap <expr> <CR> Expander()
 
+" search for the word under the cursor
+nnoremap <silent> <Leader>ag :Ack <C-R><C-W><CR>
