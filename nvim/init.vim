@@ -1,5 +1,4 @@
-""""""""""""""""""""""""""""""""""""""""""""""""""""
-" => Interface
+
 """""""""""""""""""""""""""""""""""""""""""""""""""""""
 let mapleader = ','
 syntax on " Enable syntax highlighting
@@ -51,7 +50,7 @@ Plug 'vim-airline/vim-airline-themes'
 Plug 'mxw/vim-jsx'
 Plug 'jiangmiao/auto-pairs'
 Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
-Plug 'mattn/emmet-vim', { 'for': ['javascript', 'jsx', 'html', 'css'] }
+Plug 'mattn/emmet-vim'
 Plug 'tpope/vim-surround'
 Plug 'w0rp/ale'
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
@@ -113,6 +112,7 @@ au FileType go nmap <Leader>i <Plug>(go-info)
 " Open the relevant Godoc for the word under the cursor
 au FileType go nmap <Leader>gd <Plug>(go-doc)
 au FileType go nmap <Leader>gv <Plug>(go-doc-vertical)
+au FileType go nmap <Leader>gs <Plug>(go-doc-split)
 
 " Open the Godoc in browser
 au FileType go nmap <Leader>gb <Plug>(go-doc-browser)
@@ -155,18 +155,18 @@ autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isT
 " show hidden files
 let NERDTreeShowHidden=1
 
-" emmet
-autocmd FileType javascript,jsx EmmetInstall
-
-let g:user_emmet_settings={
-\  'javascript.jsx' : {
-\    'extends': 'jsx',
-\    'default_attributes': {
-\      'label': [{'htmlFor': ''}],
-\      'class': {'className': ''},
-\    }
-\  },
-\}
+""" emmet
+""autocmd FileType javascript,jsx EmmetInstall
+""
+""let g:user_emmet_settings={
+""\  'javascript.jsx' : {
+""\    'extends': 'jsx',
+""\    'default_attributes': {
+""\      'label': [{'htmlFor': ''}],
+""\      'class': {'className': ''},
+""\    }
+""\  },
+""\}
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Vim mappings
