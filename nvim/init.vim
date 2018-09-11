@@ -80,7 +80,7 @@ let g:airline#extensions#branch#enabled = 1
 let g:ale_fixers = {}
 let g:ale_fixers['javascript'] = ['prettier']
 let g:ale_fixers['scss'] = ['prettier']
-let g:ale_fix_on_save = 1
+let g:ale_fix_on_save = 0
 let g:ale_javascript_prettier_use_local_config = 1
 
 let g:ale_linters = {
@@ -181,6 +181,14 @@ imap jk <Esc>
 set pastetoggle=<F2>
 
 tnoremap <Esc> <C-\><C-n>
+tnoremap jk <C-\><C-n>
+
+" Navigate between panes
+nnoremap <C-J> <C-W><C-J>
+nnoremap <C-K> <C-W><C-K>
+nnoremap <C-L> <C-W><C-L>
+nnoremap <C-H> <C-W><C-H>
+
 """""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Vim settings
 """""""""""""""""""""""""""""""""""""""""""""""""""""""

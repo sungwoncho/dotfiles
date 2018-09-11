@@ -24,6 +24,7 @@ install_dotfiles() {
   link_file "$DOTFILES_ROOT"/zsh/aliases.zsh "$OH_MY_ZSH"/custom/aliases.zsh
   link_file "$DOTFILES_ROOT"/zsh/.zshrc "$HOME"/.zshrc
   link_file "$DOTFILES_ROOT"/nvim/init.vim "$HOME"/.config/nvim/init.vim
+  link_file "$DOTFILES_ROOT"/tmux/.tmux.conf "$HOME"/.tmux.conf
 }
 
 link_file() {
