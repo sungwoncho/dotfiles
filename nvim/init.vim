@@ -178,6 +178,9 @@ imap <leader>s <esc>:w<cr>i
 nmap <leader>e :NERDTreeToggle<cr>
 imap jk <Esc>
 
+" Open a file in a new tab
+map gF <C-W>gf
+
 " Toggle paste mode
 set pastetoggle=<F2>
 
