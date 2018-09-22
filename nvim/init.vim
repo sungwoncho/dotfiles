@@ -79,8 +79,9 @@ let g:airline#extensions#branch#enabled = 1
 " ale
 let g:ale_fixers = {}
 let g:ale_fixers['javascript'] = ['prettier']
+"let g:ale_fixers['json'] = ['prettier']
 let g:ale_fixers['scss'] = ['prettier']
-let g:ale_fix_on_save = 0
+let g:ale_fix_on_save = 1
 let g:ale_javascript_prettier_use_local_config = 1
 
 let g:ale_linters = {
@@ -269,3 +270,11 @@ au FileType html,js,jsx inoremap <expr> <CR> Expander()
 
 " search for the word under the cursor
 nnoremap <silent> <Leader>ag :Ack <C-R><C-W><CR>
+
+" edit and source vim config
+nnoremap <Leader>ev :vs ~/.dotfiles/nvim/init.vim<CR>
+nnoremap <Leader>sv :source ~/.dotfiles/nvim/init.vim<CR>
+
+" copy and paste using the system clipboard
+noremap <Leader>y "+y
+noremap <Leader>p "+p
