@@ -54,6 +54,7 @@ Plug 'mattn/emmet-vim'
 Plug 'tpope/vim-surround'
 Plug 'w0rp/ale'
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+Plug 'zchee/deoplete-go', { 'do': 'make' }
 Plug 'Shougo/neosnippet.vim'
 Plug 'Shougo/neosnippet-snippets'
 Plug 'scrooloose/nerdtree'
@@ -275,7 +276,7 @@ au FileType html,js,jsx inoremap <expr> <CR> Expander()
 nnoremap <silent> <Leader>ag :Ack <C-R><C-W><CR>
 
 " edit and source vim config
-nnoremap <Leader>ev :vs ~/.dotfiles/nvim/init.vim<CR>
+nnoremap <Leader>cv :vs ~/.dotfiles/nvim/init.vim<CR>
 nnoremap <Leader>sv :source ~/.dotfiles/nvim/init.vim<CR>
 
 " copy and paste using the system clipboard
