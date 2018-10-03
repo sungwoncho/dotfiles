@@ -194,6 +194,15 @@ nnoremap <C-K> <C-W><C-K>
 nnoremap <C-L> <C-W><C-L>
 nnoremap <C-H> <C-W><C-H>
 
+set foldlevelstart=99
+set foldmethod=indent
+nmap z0 :set foldlevel=0<CR>
+nmap z1 :set foldlevel=1<CR>
+nmap z2 :set foldlevel=2<CR>
+nmap z3 :set foldlevel=3<CR>
+nmap z4 :set foldlevel=4<CR>
+nmap z5 :set foldlevel=5<CR>
+
 """""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Vim settings
 """""""""""""""""""""""""""""""""""""""""""""""""""""""
