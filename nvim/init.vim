@@ -196,7 +196,7 @@ nnoremap <C-H> <C-W><C-H>
 
 set foldlevelstart=99
 set foldmethod=indent
-nmap z0 :set foldlevel=0<CR>
+nmap z0 :set foldlevel=0<CR>zz
 nmap z1 :set foldlevel=1<CR>
 nmap z2 :set foldlevel=2<CR>
 nmap z3 :set foldlevel=3<CR>
