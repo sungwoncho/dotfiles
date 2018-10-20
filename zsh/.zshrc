@@ -58,7 +58,7 @@ export PATH=$PATH:"/usr/local/bin:/usr/local/sbin:~/bin:~/.rvm/gems/ruby-2.2.2/b
 
 source $ZSH/oh-my-zsh.sh
 
-export EDITOR='vim'
+export EDITOR='nvim'
 
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
