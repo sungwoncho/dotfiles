@@ -71,18 +71,6 @@ init_nvim() {
   nvim -c "PlugInstall | q | q"
 }
 
-install_nvim() {
-  if [[ "$platform" == "macos" ]]; then
-    brew install neovim
-  elif [[ "$platform" == "linux" ]]; then
-    sudo apt-get -y install software-properties-common
-    sudo apt-add-repository -y ppa:neovim-ppa/stable
-    sudo apt-get -y update
-    sudo apt-get -y install neovim
-    sudo apt-get -y install python-dev python-pip python3-dev python3-pip
-  fi
-}
-
 copy_file() {
   local src=$1 dst=$2
   local overwrite=true
@@ -96,7 +84,6 @@ copy_file() {
 install_oh_my_zsh
 switch_to_zsh
 install_dotfiles
-install_nvim
 init_nvim
 
 echo "All installed"
