@@ -8,16 +8,6 @@ cd $HOME
 
 # Check OS
 # Works on macOS and Ubuntu
-ostype=$(uname)
-if [[ "$ostype"  == 'Darwin' ]]; then
-  platform='macos'
-elif [[ "$ostype" == 'Linux' ]]; then
-  platform='linux'
-else
-  echo "OS " + $ostype + " is not supported"
-  exit 1
-fi
-
 install_dotfiles() {
   mkdir -p "$OH_MY_ZSH"/custom
   mkdir -p "$HOME"/.config/nvim

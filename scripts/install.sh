@@ -9,6 +9,8 @@ set -x
 
 if [[ "$platform" == "linux" ]]; then
   echo "installing for Ubuntu"
+  sudo apt-get -y update
+  sudo apt-get -y install git
   sudo apt-get -y install ack-grep
   sudo apt-get -y install software-properties-common
   sudo apt-add-repository -y ppa:neovim-ppa/stable
@@ -16,8 +18,17 @@ if [[ "$platform" == "linux" ]]; then
   sudo apt-get -y install neovim
   sudo apt-get -y install python-dev python-pip python3-dev python3-pip
   sudo apt-get -y install vim
-elif [[ "$platform" == "macos" ]]; then
+  sudo apt-get -y install silversearcher-ag
+  sudo apt-get -y install zsh
+elif [[ "$platform" == "darwin" ]]; then
   echo "installing for mac"
+  # install homebrew
+  /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+
+  brew update
+  brew install zsh
+  brew install git
   brew install neovim
   brew install ack
+  brew install the_silver_searcher
 fi

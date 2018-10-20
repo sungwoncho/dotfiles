@@ -4,7 +4,13 @@ Personal system configurations.
 
 ## Install
 
-* Set up by running `./scripts/bootstrap`
-**It will overwrite all your current settings.**
+Only supports Ubuntu and macOS.
 
-* Install dependencies by running `./scripts/install`
+1. Run `./scripts/install.sh` to intall dependencies.
+2. Run `./scripts/bootstrap.sh` to initialize the system.
+
+**Step #2 will overwrite all your current settings.**
+
+## LICENSE
+
+BSD
