@@ -25,6 +25,8 @@ install_dotfiles() {
   link_file "$DOTFILES_ROOT"/zsh/.zshrc "$HOME"/.zshrc
   link_file "$DOTFILES_ROOT"/nvim/init.vim "$HOME"/.config/nvim/init.vim
   link_file "$DOTFILES_ROOT"/tmux/.tmux.conf "$HOME"/.tmux.conf
+  link_file "$DOTFILES_ROOT"/git/gitconfig.sym "$HOME"/.gitconfig
+  link_file "$DOTFILES_ROOT"/git/gitignore.sym "$HOME"/.gitignore
 }
 
 link_file() {
@@ -53,7 +55,7 @@ switch_to_zsh() {
   if [[ "$SHELL" =~ "zsh" ]]; then
     echo "Already using zsh"
   else
-    chsh -s `which zsh`
+    chsh --s=`which zsh`
     echo "Switched the default shell to zsh"
   fi
 }
