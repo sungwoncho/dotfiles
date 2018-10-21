@@ -202,6 +202,7 @@ nmap z2 :set foldlevel=2<CR>
 nmap z3 :set foldlevel=3<CR>
 nmap z4 :set foldlevel=4<CR>
 nmap z5 :set foldlevel=5<CR>
+nmap zx zRkzt
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Vim settings
