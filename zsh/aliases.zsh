@@ -99,11 +99,10 @@ alias nu='npm uninstall'
 alias nug='npm uninstall --global'
 alias nus='npm uninstall --save'
 alias nusd='npm uninstall --save-dev'
-alias gu='gulp'
 alias ns='npm start'
 alias nt='npm test'
-alias npub='npm publish'
-alias ncom='npm run-script compile'
+alias nr='npm run'
+alias nrd='npm run dev'
 
 # Frontend related
 alias bo='bower'
@@ -139,3 +138,7 @@ alias tm="tmux"
 alias tmls="tmux ls"
 alias tmat="tmux attach -t"
 
+# ubuntu
+alias agu="sudo apt-get update -y"
+alias agi="sudo apt-get install -y"
+alias agr="sudo apt-get remove -y"
