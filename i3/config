@@ -176,5 +176,6 @@ bindsym XF86MonBrightnessDown exec "light -U 5; notify-send 'brightness down'"
 
 exec spotify
 exec nm-applet
+exec blueman-applet
 
 exec_always feh --bg-scale ~/bg.png
