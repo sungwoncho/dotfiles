@@ -20,6 +20,9 @@ if [[ "$platform" == "linux" ]]; then
   sudo apt-get -y install vim
   sudo apt-get -y install silversearcher-ag
   sudo apt-get -y install zsh
+  sudo apt-get -y install curl
+  sudo apt-get -y install i3
+  sudo apt-get -y install i3blocks
 elif [[ "$platform" == "darwin" ]]; then
   echo "installing for mac"
   # install homebrew
