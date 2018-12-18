@@ -23,6 +23,7 @@ if [[ "$platform" == "linux" ]]; then
   sudo apt-get -y install curl
   sudo apt-get -y install i3
   sudo apt-get -y install i3blocks
+  sudo apt-get -y install blueman
 elif [[ "$platform" == "darwin" ]]; then
   echo "installing for mac"
   # install homebrew
