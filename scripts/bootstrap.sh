@@ -18,9 +18,12 @@ install_dotfiles() {
   link_file "$DOTFILES_ROOT"/nvim/init.vim "$HOME"/.config/nvim/init.vim
   link_file "$DOTFILES_ROOT"/i3/config "$HOME"/.config/i3/config
   link_file "$DOTFILES_ROOT"/i3/i3blocks.conf "$HOME"/.config/i3/i3blocks.conf
+  link_file "$DOTFILES_ROOT"/bg.png "$HOME"/bg.png
   link_file "$DOTFILES_ROOT"/tmux/.tmux.conf "$HOME"/.tmux.conf
-  link_file "$DOTFILES_ROOT"/git/gitconfig.sym "$HOME"/.gitconfig
   link_file "$DOTFILES_ROOT"/git/gitignore.sym "$HOME"/.gitignore
+
+  ## uncomment this line to override gitconfig
+  # link_file "$DOTFILES_ROOT"/git/gitconfig.sym "$HOME"/.gitconfig
 }
 
 link_file() {

@@ -164,7 +164,7 @@ bar {
 
 #### custom
 
-bindsym $mod+Shift+x exec "i3lock --image ~/lockscreen.png"
+bindsym $mod+Shift+x exec "i3lock --image ~/bg.png"
 
 #audio control
 bindsym XF86AudioRaiseVolume exec "amixer -q sset Master,0 1+ unmute; notify-send 'volume up'"
