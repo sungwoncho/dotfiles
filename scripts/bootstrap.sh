@@ -77,6 +77,9 @@ copy_file() {
 init_dirs() {
   # for nvm
   mkdir -p "$HOME"/.nvm
+
+  mkdir -p "$GOPATH"/bin
+  mkdir -p "$GOPATH"/src
 }
 
 install_oh_my_zsh
