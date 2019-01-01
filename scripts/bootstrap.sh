@@ -74,9 +74,15 @@ copy_file() {
   fi
 }
 
+init_dirs() {
+  # for nvm
+  mkdir -p "$HOME"/.nvm
+}
+
 install_oh_my_zsh
 switch_to_zsh
 install_dotfiles
+init_dirs
 init_nvim
 
 echo "All installed"
