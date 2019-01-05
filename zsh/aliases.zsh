@@ -131,7 +131,9 @@ alias hr='heroku run'
 alias grp='grep'
 alias ..='cd ..'
 alias ...='cd ...'
-alias bt="~/.dotfiles/scripts/bootstrap" # Easily apply settings
+alias bt="~/.dotfiles/scripts/bootstrap.sh" # Easily apply settings
+alias pf='sudo pvpn -f'
+alias pd='sudo pvpn -d'
 
 # tmux
 alias tm="tmux"
