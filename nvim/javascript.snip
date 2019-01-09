@@ -1,0 +1,33 @@
+source js.vim
+
+snippet rcl
+abbr React classical Component
+options head
+  import React from 'react';
+
+  class ${1}MyComponent extends React.Component {
+    render() {
+      return (
+        <div>
+          MyComponent
+        </div>
+      )
+    }
+  }
+
+  export default MyComponent;
+
+snippet rcom
+abbr React functional component
+options head
+  import React from 'react'
+
+  const MyComponent = ({}) => {
+    return (
+      <div>
+        MyComponent
+      </div>
+    )
+  }
+
+  export default MyComponent;

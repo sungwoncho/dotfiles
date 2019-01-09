@@ -10,17 +10,17 @@ cd $HOME
 # Works on macOS and Ubuntu
 install_dotfiles() {
   mkdir -p "$OH_MY_ZSH"/custom
-  mkdir -p "$HOME"/.config/nvim
+  mkdir -p "$HOME"/.config/nvim/snippets
   mkdir -p "$HOME"/.config/i3
 
   link_file "$DOTFILES_ROOT"/zsh/aliases.zsh "$OH_MY_ZSH"/custom/aliases.zsh
   link_file "$DOTFILES_ROOT"/zsh/.zshrc "$HOME"/.zshrc
   link_file "$DOTFILES_ROOT"/nvim/init.vim "$HOME"/.config/nvim/init.vim
+  link_file "$DOTFILES_ROOT"/nvim/javascript.snip "$HOME"/.config/nvim/snippets/javascript.snip
   link_file "$DOTFILES_ROOT"/i3/config "$HOME"/.config/i3/config
   link_file "$DOTFILES_ROOT"/i3/i3blocks.conf "$HOME"/.config/i3/i3blocks.conf
   link_file "$DOTFILES_ROOT"/bg.png "$HOME"/bg.png
   link_file "$DOTFILES_ROOT"/tmux/.tmux.conf "$HOME"/.tmux.conf
-  link_file "$DOTFILES_ROOT"/git/gitignore.sym "$HOME"/.gitignore
 
   ## uncomment this line to override gitconfig
   # link_file "$DOTFILES_ROOT"/git/gitconfig.sym "$HOME"/.gitconfig
