@@ -11,6 +11,11 @@ Only supports Ubuntu and macOS.
 
 **Step #2 will overwrite all your current settings.**
 
+*optional*
+
+3. Install node and run `./scripts/node.sh`.
+  - required to use things like neovim plugin for typescript
+
 ## LICENSE
 
 BSD

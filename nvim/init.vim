@@ -40,6 +40,7 @@ nnoremap <CR> :noh<CR>
 " managed by vim-plug
 call plug#begin('~/.local/share/nvim/plugged')
 
+Plug 'leafgarland/typescript-vim'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'pangloss/vim-javascript'
 Plug 'bling/vim-airline'
@@ -53,11 +54,14 @@ Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 Plug 'mattn/emmet-vim'
 Plug 'tpope/vim-surround'
 Plug 'w0rp/ale'
+Plug 'HerringtonDarkholme/yats.vim'
+Plug 'mhartington/nvim-typescript', {'do': './install.sh'}
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'zchee/deoplete-go', { 'do': 'make' }
 Plug 'Shougo/neosnippet.vim'
 Plug 'Shougo/neosnippet-snippets'
 Plug 'scrooloose/nerdtree'
+Plug 'Quramy/tsuquyomi'
 
 call plug#end()
 
