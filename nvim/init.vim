@@ -160,6 +160,9 @@ let g:neosnippet#snippets_directory='~/.config/nvim/snippets'
 " close vim if the only window left open is a NERDTree
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 
+" find and focus the current file in the tree
+nmap ,n :NERDTreeFind<CR>
+
 " show hidden files
 let NERDTreeShowHidden=1
 
