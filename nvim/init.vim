@@ -34,6 +34,8 @@ set hlsearch
 " Shortcut for clearing search highlight
 nnoremap <CR> :noh<CR>
 
+colorscheme torte
+
 """""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Plugins
 """""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -125,7 +127,9 @@ au FileType go nmap <Leader>gb <Plug>(go-doc-browser)
 
 let g:go_fmt_command = "gofmt"
 "let g:syntastic_go_checkers = ['golint', 'govet', 'errcheck']
+let g:go_metalinter_command='golangci-lint'
 let g:go_metalinter_autosave = 1
+let g:go_metalinter_enabled = ['vet', 'golint', 'errcheck']
 let g:go_metalinter_deadline = "10s"
 
 let g:go_auto_type_info = 1

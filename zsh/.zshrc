@@ -52,7 +52,7 @@ plugins=()
 
 # User configuration
 export GOPATH=$HOME/dev/go
-export DNOTE="$GOPATH"/src/github.com/dnote/
+export DNOTE="$GOPATH"/src/github.com/dnote/dnote/
 
 export PATH=$PATH:"/usr/local/bin:/usr/local/sbin:~/bin:~/.rvm/gems/ruby-2.2.2/bin:~/.rvm/gems/ruby-2.2.2@global/bin:~/.rvm/rubies/ruby-2.2.2/bin:/user/local/bin:/usr/local/sbin:/usr/local/mysql/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/X11/bin:/usr/local/git/bin:/usr/local/sbin:~/bin:~/.rvm/gems/ruby-2.2.2/bin:~/.rvm/gems/ruby-2.2.2@global/bin:~/.rvm/rubies/ruby-2.2.2/bin:/user/local/bin:/usr/local/mysql/bin:~/.rvm/bin:~/.rvm/bin:~/.rvm/bin:$GOPATH/bin:/usr/local/octave/3.8.0/bin:/usr/local/go/bin:/home/sung/.local/bin"
 # export MANPATH="/usr/local/man:$MANPATH"
