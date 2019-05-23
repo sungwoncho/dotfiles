@@ -1,5 +1,7 @@
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""
+colorscheme torte
+
 let mapleader = ','
 syntax on " Enable syntax highlighting
 
@@ -57,7 +59,7 @@ Plug 'mattn/emmet-vim'
 Plug 'tpope/vim-surround'
 Plug 'w0rp/ale'
 Plug 'HerringtonDarkholme/yats.vim'
-Plug 'mhartington/nvim-typescript', {'do': './install.sh'}
+Plug 'mhartington/nvim-typescript', {'build': './install.sh'}
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'zchee/deoplete-go', { 'do': 'make' }
 Plug 'Shougo/neosnippet.vim'

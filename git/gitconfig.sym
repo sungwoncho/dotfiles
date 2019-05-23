@@ -1,6 +1,6 @@
 [user]
 	name = Sung Won Cho
-	email = mikeswcho@gmail.com
+	email = sung@monomax.sh
 	signingkey = 72EC1BB951025ED7
 [alias]
 	co = checkout
