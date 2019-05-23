@@ -52,7 +52,7 @@ switch_to_zsh() {
   if [[ "$SHELL" =~ "zsh" ]]; then
     echo "Already using zsh"
   else
-    chsh -s=`which zsh`
+    chsh -s `which zsh`
     echo "Switched the default shell to zsh"
   fi
 }
