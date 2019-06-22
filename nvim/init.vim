@@ -72,7 +72,8 @@ call plug#end()
 """""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Plugin specific mappings
 """""""""""""""""""""""""""""""""""""""""""""""""""""""
-
+nmap <silent> <C-a> :ALENext<cr>
+nmap <silent> <C-s> :ALEPrevious<cr>
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Plugin specific settings
