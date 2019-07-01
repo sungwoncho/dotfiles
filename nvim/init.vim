@@ -308,5 +308,3 @@ nnoremap <Leader>sv :source ~/.dotfiles/nvim/init.vim<CR>
 " copy and paste using the system clipboard
 noremap <Leader>y "+y
 noremap <Leader>p "+p
-
-:command JSONFormat '<,'>!python -m json.tool
