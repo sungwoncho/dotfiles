@@ -121,7 +121,7 @@ au FileType go nmap <Leader>f <Plug>(go-implements)
 au FileType go nmap <Leader>i <Plug>(go-info)
 
 " Open the relevant Godoc for the word under the cursor
-au FileType go nmap <Leader>gd <Plug>(go-doc)
+au FileType go nmap <Leader>gd <Plug>(go-def-tab)
 au FileType go nmap <Leader>gv <Plug>(go-doc-vertical)
 au FileType go nmap <Leader>gs <Plug>(go-doc-split)
 
