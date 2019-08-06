@@ -89,6 +89,7 @@ let g:airline#extensions#branch#enabled = 1
 " ale
 let g:ale_fixers = {}
 let g:ale_fixers['javascript'] = ['prettier']
+let g:ale_fixers['typescript'] = ['prettier']
 "let g:ale_fixers['json'] = ['prettier']
 let g:ale_fixers['scss'] = ['prettier']
 let g:ale_fix_on_save = 1
@@ -129,6 +130,10 @@ au FileType go nmap <Leader>gs <Plug>(go-doc-split)
 au FileType go nmap <Leader>gb <Plug>(go-doc-browser)
 
 let g:go_fmt_command = "gofmt"
+let g:go_fmt_options = {
+  \ 'gofmt': '-s',
+\ }
+
 "let g:syntastic_go_checkers = ['golint', 'govet', 'errcheck']
 let g:go_metalinter_command='golangci-lint'
 let g:go_metalinter_autosave = 1
@@ -174,17 +179,13 @@ nmap ,n :NERDTreeFind<CR>
 let NERDTreeShowHidden=1
 
 """ emmet
-""autocmd FileType javascript,jsx EmmetInstall
-""
-""let g:user_emmet_settings={
-""\  'javascript.jsx' : {
-""\    'extends': 'jsx',
-""\    'default_attributes': {
-""\      'label': [{'htmlFor': ''}],
-""\      'class': {'className': ''},
-""\    }
-""\  },
-""\}
+autocmd FileType javascript.jsx,typescript.tsx EmmetInstall
+
+let g:user_emmet_settings={
+\  'typescript' : {
+\    'extends': 'jsx',
+\  },
+\}
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Vim mappings
