@@ -198,6 +198,10 @@ imap jk <Esc>
 
 " Open a file in a new tab
 map gF <C-W>gf
+" Open a file in a vertical split
+map GF :vertical wincmd f<CR>
+" Open a file in a horizontal split
+map Gf <C-W>f
 
 " Toggle paste mode
 set pastetoggle=<F2>
