@@ -66,6 +66,7 @@ Plug 'Shougo/neosnippet.vim'
 Plug 'Shougo/neosnippet-snippets'
 Plug 'scrooloose/nerdtree'
 Plug 'Quramy/tsuquyomi'
+Plug 'junegunn/goyo.vim'
 
 call plug#end()
 
@@ -197,9 +198,9 @@ nmap <leader>e :NERDTreeToggle<cr>
 imap jk <Esc>
 
 " Open a file in a new tab
-map gF <C-W>gf
+map GF <C-W>gf
 " Open a file in a vertical split
-map GF :vertical wincmd f<CR>
+map gF :vertical wincmd f<CR> <C-W>L
 " Open a file in a horizontal split
 map Gf <C-W>f
 
