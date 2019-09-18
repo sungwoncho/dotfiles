@@ -57,11 +57,11 @@ Plug 'jiangmiao/auto-pairs'
 Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 Plug 'mattn/emmet-vim'
 Plug 'tpope/vim-surround'
-Plug 'w0rp/ale'
+Plug 'dense-analysis/ale'
 Plug 'HerringtonDarkholme/yats.vim'
 Plug 'mhartington/nvim-typescript', {'build': './install.sh'}
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
-Plug 'zchee/deoplete-go', { 'do': 'make' }
+Plug 'deoplete-plugins/deoplete-go', { 'do': 'make' }
 Plug 'Shougo/neosnippet.vim'
 Plug 'Shougo/neosnippet-snippets'
 Plug 'scrooloose/nerdtree'
@@ -98,6 +98,7 @@ let g:ale_javascript_prettier_use_local_config = 1
 
 let g:ale_linters = {
 \   'javascript': ['eslint'],
+\   'go': ['gopls'],
 \}
 
 " Use Syntastic to check syntax
@@ -134,6 +135,9 @@ let g:go_fmt_command = "gofmt"
 let g:go_fmt_options = {
   \ 'gofmt': '-s',
 \ }
+
+let g:go_def_mode='gopls'
+let g:go_info_mode='gocode'
 
 "let g:syntastic_go_checkers = ['golint', 'govet', 'errcheck']
 let g:go_metalinter_command='golangci-lint'
