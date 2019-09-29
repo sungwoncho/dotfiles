@@ -97,3 +97,7 @@ export LIBRARY_PATH=$LIBRARY_PATH:/usr/local/lib
 export C_INCLUDE_PATH=$C_INCLUDE_PATH:/usr/local/include
 
 export ethereum_home=${HOME}/dev/ethereum
+
+# LMMS
+# https://github.com/LMMS/lmms/issues/4919#issuecomment-520153059
+export QT_AUTO_SCREEN_SCALE_FACTOR=0
