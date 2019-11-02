@@ -104,11 +104,6 @@ alias nt='npm test'
 alias nr='npm run'
 alias nrd='npm run dev'
 
-# Frontend related
-alias bo='bower'
-alias boi='bower install'
-alias bois='bower install --save'
-
 # Docker
 alias d='docker'
 alias di='docker images'
@@ -136,6 +131,12 @@ alias ...='cd ...'
 alias bt="~/.dotfiles/scripts/bootstrap.sh" # Easily apply settings
 alias pf='sudo pvpn -f'
 alias pd='sudo pvpn -d'
+
+# Vagrant
+alias va='vagrant'
+alias vs='vagrant ssh'
+alias vu='vagrant up'
+alias vh='vagrant halt'
 
 # tmux
 alias tm="tmux"
