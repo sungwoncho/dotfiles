@@ -1,7 +1,5 @@
 
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""
-colorscheme torte
-
+""""""""""""""""""""""""""""""""""""""""""""""""""""""
 let mapleader = ','
 syntax on " Enable syntax highlighting
 
@@ -36,7 +34,6 @@ set hlsearch
 " Shortcut for clearing search highlight
 nnoremap <CR> :noh<CR>
 
-colorscheme torte
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Plugins
@@ -82,6 +79,8 @@ nmap <silent> <C-s> :ALEPrevious<cr>
 " ctrlp.vim
 let g:ctrlp_custom_ignore = 'node_modules\|DS_Store\|vendor|compiled'
 let g:ctrlp_show_hidden = 1
+let g:ctrlp_max_files=0
+let g:ctrlp_max_depth=40
 
 " vim-airline
 let g:airline_theme = 'powerlineish'
@@ -91,6 +90,7 @@ let g:airline#extensions#branch#enabled = 1
 let g:ale_fixers = {}
 let g:ale_fixers['javascript'] = ['prettier']
 let g:ale_fixers['typescript'] = ['prettier']
+let g:ale_fixers['typescriptreact'] = ['prettier']
 "let g:ale_fixers['json'] = ['prettier']
 let g:ale_fixers['scss'] = ['prettier']
 let g:ale_fix_on_save = 1
@@ -98,6 +98,7 @@ let g:ale_javascript_prettier_use_local_config = 1
 
 let g:ale_linters = {
 \   'javascript': ['eslint'],
+\   'typescript': ['tsserver', 'eslint'],
 \   'go': ['gopls'],
 \}
 

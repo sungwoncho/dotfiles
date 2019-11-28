@@ -137,6 +137,8 @@ alias va='vagrant'
 alias vs='vagrant ssh'
 alias vu='vagrant up'
 alias vh='vagrant halt'
+alias vra='vagrant rsync-auto'
+
 
 # tmux
 alias tm="tmux"
