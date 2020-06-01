@@ -151,5 +151,5 @@ alias agi="sudo apt-get install -y"
 alias agr="sudo apt-get remove -y"
 
 # screen
-alias sdual="~/.dotfiles/xrandr/dual.sh"
-alias snorm="~/.dotfiles/xrandr/normal.sh"
+alias sd="~/.dotfiles/xrandr/dual.sh"
+alias sn="~/.dotfiles/xrandr/normal.sh"
