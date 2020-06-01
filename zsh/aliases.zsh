@@ -149,3 +149,7 @@ alias tmat="tmux attach -t"
 alias agu="sudo apt-get update -y"
 alias agi="sudo apt-get install -y"
 alias agr="sudo apt-get remove -y"
+
+# screen
+alias sdual="~/.dotfiles/xrandr/dual.sh"
+alias snorm="~/.dotfiles/xrandr/normal.sh"

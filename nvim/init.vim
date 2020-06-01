@@ -1,5 +1,7 @@
 
+
 """"""""""""""""""""""""""""""""""""""""""""""""""""""
+color torte
 let mapleader = ','
 syntax on " Enable syntax highlighting
 
@@ -56,9 +58,10 @@ Plug 'mattn/emmet-vim'
 Plug 'tpope/vim-surround'
 Plug 'dense-analysis/ale'
 Plug 'HerringtonDarkholme/yats.vim'
-Plug 'mhartington/nvim-typescript', {'build': './install.sh'}
+Plug 'mhartington/nvim-typescript', {'do': ':!install.sh \| UpdateRemotePlugins'}
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'deoplete-plugins/deoplete-go', { 'do': 'make' }
+Plug 'zchee/deoplete-clang'
 Plug 'Shougo/neosnippet.vim'
 Plug 'Shougo/neosnippet-snippets'
 Plug 'scrooloose/nerdtree'
@@ -70,8 +73,8 @@ call plug#end()
 """""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Plugin specific mappings
 """""""""""""""""""""""""""""""""""""""""""""""""""""""
-nmap <silent> <C-a> :ALENext<cr>
-nmap <silent> <C-s> :ALEPrevious<cr>
+nmap <silent> <leader>an :ALENext<cr>
+nmap <silent> <leader>am :ALEPrevious<cr>
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Plugin specific settings
@@ -91,8 +94,10 @@ let g:ale_fixers = {}
 let g:ale_fixers['javascript'] = ['prettier']
 let g:ale_fixers['typescript'] = ['prettier']
 let g:ale_fixers['typescriptreact'] = ['prettier']
+"let g:ale_fixers['html'] = ['prettier']
 "let g:ale_fixers['json'] = ['prettier']
 let g:ale_fixers['scss'] = ['prettier']
+let g:ale_fixers['css'] = ['prettier']
 let g:ale_fix_on_save = 1
 let g:ale_javascript_prettier_use_local_config = 1
 
@@ -138,7 +143,7 @@ let g:go_fmt_options = {
 \ }
 
 let g:go_def_mode='gopls'
-let g:go_info_mode='gocode'
+" let g:go_info_mode='gocode'
 
 "let g:syntastic_go_checkers = ['golint', 'govet', 'errcheck']
 let g:go_metalinter_command='golangci-lint'
@@ -319,3 +324,5 @@ nnoremap <Leader>sv :source ~/.dotfiles/nvim/init.vim<CR>
 " copy and paste using the system clipboard
 noremap <Leader>y "+y
 noremap <Leader>p "+p
+
+autocmd BufNewFile,BufRead *.gohtml set syntax=html
