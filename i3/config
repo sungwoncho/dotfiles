@@ -150,7 +150,9 @@ mode "resize" {
         # back to normal: Enter or Escape
         bindsym Return mode "default"
         bindsym Escape mode "default"
+
 }
+
 
 bindsym $mod+r mode "resize"
 
@@ -182,3 +184,8 @@ exec_always feh --bg-scale ~/bg.png
 
 bindsym Print exec "scrot $HOME/Pictures/`date +%Y-%m-%d_%H:%M:%S`.png; notify-send 'screenshot captured'"
 bindsym --release $mod+Shift+Print exec "scrot -s $HOME/Pictures/`date +%Y-%m-%d_%H:%M:%S`.png; notify-send 'screenshot captured'"
+
+# live stream
+
+# Float the current window and move to the top left corner
+bindsym $mod+z floating enable; move position 0 0; resize set 1920 1080

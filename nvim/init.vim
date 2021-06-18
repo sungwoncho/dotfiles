@@ -3,7 +3,7 @@
 """"""""""""""""""""""""""""""""""""""""""""""""""""""
 color torte
 let mapleader = ','
-syntax on " Enable syntax highlighting
+syntax off " Enable syntax highlighting
 
 set expandtab " Use spaces instead of tabs
 set smarttab
@@ -61,7 +61,8 @@ Plug 'HerringtonDarkholme/yats.vim'
 Plug 'mhartington/nvim-typescript', {'do': ':!install.sh \| UpdateRemotePlugins'}
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'deoplete-plugins/deoplete-go', { 'do': 'make' }
-Plug 'zchee/deoplete-clang'
+
+Plug 'deoplete-plugins/deoplete-jedi'
 Plug 'Shougo/neosnippet.vim'
 Plug 'Shougo/neosnippet-snippets'
 Plug 'scrooloose/nerdtree'
@@ -146,9 +147,9 @@ let g:go_def_mode='gopls'
 " let g:go_info_mode='gocode'
 
 "let g:syntastic_go_checkers = ['golint', 'govet', 'errcheck']
-let g:go_metalinter_command='golangci-lint'
+let g:go_metalinter_command='gopls'
 let g:go_metalinter_autosave = 1
-let g:go_metalinter_enabled = ['vet', 'golint', 'errcheck']
+let g:go_metalinter_enabled = ['govet', 'errcheck']
 let g:go_metalinter_deadline = "10s"
 
 let g:go_auto_type_info = 1
