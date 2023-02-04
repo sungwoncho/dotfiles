@@ -24,7 +24,7 @@ install_dotfiles() {
   link_file "$DOTFILES_ROOT"/tmux/.tmux.conf "$HOME"/.tmux.conf
 
   ## uncomment this line to override gitconfig
-  # link_file "$DOTFILES_ROOT"/git/gitconfig.sym "$HOME"/.gitconfig
+  link_file "$DOTFILES_ROOT"/git/gitconfig.sym "$HOME"/.gitconfig
 }
 
 link_file() {
@@ -79,8 +79,6 @@ init_dirs() {
   # for nvm
   mkdir -p "$HOME"/.nvm
 
-  mkdir -p "$GOPATH"/bin
-  mkdir -p "$GOPATH"/src
 }
 
 install_oh_my_zsh

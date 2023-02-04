@@ -16,7 +16,6 @@ if [[ "$platform" == "linux" ]]; then
   sudo apt-add-repository -y ppa:neovim-ppa/stable
   sudo apt-get -y update
   sudo apt-get -y install neovim
-  sudo apt-get -y install python-dev python-pip python3-dev python3-pip
   sudo apt-get -y install vim
   sudo apt-get -y install silversearcher-ag
   sudo apt-get -y install zsh
