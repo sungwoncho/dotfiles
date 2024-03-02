@@ -1,5 +1,3 @@
-
-
 """"""""""""""""""""""""""""""""""""""""""""""""""""""
 color torte
 let mapleader = ','
@@ -43,31 +41,24 @@ nnoremap <CR> :noh<CR>
 " managed by vim-plug
 call plug#begin('~/.local/share/nvim/plugged')
 
-Plug 'leafgarland/typescript-vim'
 Plug 'ctrlpvim/ctrlp.vim'
-Plug 'pangloss/vim-javascript'
 Plug 'bling/vim-airline'
-Plug 'terryma/vim-multiple-cursors'
 Plug 'tpope/vim-fugitive'
 Plug 'mileszs/ack.vim'
 Plug 'vim-airline/vim-airline-themes'
-Plug 'mxw/vim-jsx'
 Plug 'jiangmiao/auto-pairs'
 Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
-Plug 'mattn/emmet-vim'
 Plug 'tpope/vim-surround'
-Plug 'dense-analysis/ale'
-Plug 'HerringtonDarkholme/yats.vim'
-Plug 'mhartington/nvim-typescript', {'do': ':!install.sh \| UpdateRemotePlugins'}
-Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
-Plug 'deoplete-plugins/deoplete-go', { 'do': 'make' }
-
-Plug 'deoplete-plugins/deoplete-jedi'
-Plug 'Shougo/neosnippet.vim'
-Plug 'Shougo/neosnippet-snippets'
 Plug 'scrooloose/nerdtree'
-Plug 'Quramy/tsuquyomi'
-Plug 'junegunn/goyo.vim'
+
+Plug 'neovim/nvim-lspconfig'
+
+" auto-complete
+Plug 'hrsh7th/cmp-nvim-lsp'
+Plug 'hrsh7th/cmp-buffer'
+Plug 'hrsh7th/nvim-cmp'
+Plug 'hrsh7th/cmp-vsnip'
+Plug 'hrsh7th/vim-vsnip'
 
 call plug#end()
 
@@ -89,34 +80,6 @@ let g:ctrlp_max_depth=40
 " vim-airline
 let g:airline_theme = 'powerlineish'
 let g:airline#extensions#branch#enabled = 1
-
-" ale
-let g:ale_fixers = {}
-let g:ale_fixers['javascript'] = ['prettier']
-let g:ale_fixers['typescript'] = ['prettier']
-let g:ale_fixers['typescriptreact'] = ['prettier']
-"let g:ale_fixers['html'] = ['prettier']
-"let g:ale_fixers['json'] = ['prettier']
-let g:ale_fixers['scss'] = ['prettier']
-let g:ale_fixers['css'] = ['prettier']
-let g:ale_fix_on_save = 1
-let g:ale_javascript_prettier_use_local_config = 1
-
-let g:ale_linters = {
-\   'javascript': ['eslint'],
-\   'typescript': ['tsserver', 'eslint'],
-\   'go': ['gopls'],
-\}
-
-" Use Syntastic to check syntax
-"let g:syntastic_always_populate_loc_list = 1
-"let g:syntastic_auto_loc_list = 1
-"let g:syntastic_check_on_open = 1
-"let g:syntastic_check_on_wq = 1
-"let g:syntastic_enable_signs=1
-"let g:syntastic_loc_list_height=3
-"let g:syntastic_javascript_checkers = ['eslint']
-"let g:syntastic_javascript_eslint_exe='$(yarn bin)/eslint'
 
 " vim-go
 au FileType go nmap <leader>r <Plug>(go-run)
@@ -146,7 +109,6 @@ let g:go_fmt_options = {
 let g:go_def_mode='gopls'
 " let g:go_info_mode='gocode'
 
-"let g:syntastic_go_checkers = ['golint', 'govet', 'errcheck']
 let g:go_metalinter_command='gopls'
 let g:go_metalinter_autosave = 1
 let g:go_metalinter_enabled = ['govet', 'errcheck']
@@ -160,26 +122,6 @@ if executable('ag')
   let g:ackprg = 'ag --vimgrep --ignore compiled --ignore-dir dist'
 endif
 
-" deoplete
-" Enable at startup. Causes nvim main page to disappear
-let g:deoplete#enable_at_startup = 1
-" <TAB>: completion.
-inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
-
-" neosnippet
-imap <C-k> <Plug>(neosnippet_expand_or_jump)
-smap <C-k> <Plug>(neosnippet_expand_or_jump)
-xmap <C-k> <Plug>(neosnippet_expand_target)
-
-smap <expr><TAB> neosnippet#expandable_or_jumpable() ?
-\ "\<Plug>(neosnippet_expand_or_jump)" : "\<TAB>"
-
-if has('conceal')
-  set conceallevel=2 concealcursor=niv
-endif
-
-let g:neosnippet#snippets_directory='~/.config/nvim/snippets'
-
 " nerdtree
 " close vim if the only window left open is a NERDTree
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
@@ -189,15 +131,6 @@ nmap ,n :NERDTreeFind<CR>
 
 " show hidden files
 let NERDTreeShowHidden=1
-
-""" emmet
-autocmd FileType javascript.jsx,typescript.tsx EmmetInstall
-
-let g:user_emmet_settings={
-\  'typescript' : {
-\    'extends': 'jsx',
-\  },
-\}
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Vim mappings
@@ -245,18 +178,6 @@ set laststatus=2 " Always display the status bar
 """""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Miscellaneous
 """""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Rename current file
-function! RenameFile()
-  let old_name = expand('%')
-  let new_name = input('New file name: ', expand('%'), 'file')
-  if new_name != '' && new_name != old_name
-    exec ':saveas ' . new_name
-    exec 'silent !rm ' . old_name
-    redraw!
-  endif
-endfunction
-map <leader>r :call RenameFile()<cr>
-
 " Highlight extra whitespaces
 set list listchars=tab:»·,trail:·
 
@@ -327,3 +248,46 @@ noremap <Leader>y "+y
 noremap <Leader>p "+p
 
 autocmd BufNewFile,BufRead *.gohtml set syntax=html
+
+" lua stuff
+lua <<EOF
+  -- Set up nvim-cmp.
+  local cmp = require'cmp'
+
+  cmp.setup({
+    snippet = {
+      -- REQUIRED - you must specify a snippet engine
+      expand = function(args)
+        vim.fn["vsnip#anonymous"](args.body) -- For `vsnip` users.
+      end,
+    },
+    mapping = cmp.mapping.preset.insert({
+      ['<C-b>'] = cmp.mapping.scroll_docs(-4),
+      ['<C-f>'] = cmp.mapping.scroll_docs(4),
+      ['<C-Space>'] = cmp.mapping.complete(),
+      ['<C-e>'] = cmp.mapping.abort(),
+      ["<S-Tab>"] = cmp.mapping.select_prev_item(),
+      ["<Tab>"] = cmp.mapping.select_next_item(),
+      ['<CR>'] = cmp.mapping.confirm({ select = true }), -- Accept currently selected item. Set `select` to `false` to only confirm explicitly selected items.
+    }),
+    sources = cmp.config.sources({
+      { name = 'nvim_lsp' },
+    }, {
+      { name = 'buffer' },
+    })
+  })
+
+  -- Set up lspconfig.
+  local capabilities = require('cmp_nvim_lsp').default_capabilities()
+
+  require('lspconfig').gopls.setup {
+    capabilities = capabilities
+  }
+  require('lspconfig').pyright.setup{
+    capabilities = capabilities
+  }
+  require('lspconfig').rust_analyzer.setup({
+  })
+  require('lspconfig').tsserver.setup({
+  })
+EOF

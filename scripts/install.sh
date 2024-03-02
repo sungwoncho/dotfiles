@@ -12,7 +12,6 @@ if [[ "$platform" == "linux" ]]; then
   sudo apt-get -y update
   sudo apt-get -y install git
   sudo apt-get -y install ack-grep
-  sudo apt-get -y install software-properties-common
   sudo apt-add-repository -y ppa:neovim-ppa/stable
   sudo apt-get -y update
   sudo apt-get -y install neovim
@@ -20,11 +19,6 @@ if [[ "$platform" == "linux" ]]; then
   sudo apt-get -y install silversearcher-ag
   sudo apt-get -y install zsh
   sudo apt-get -y install curl
-  sudo apt-get -y install i3
-  sudo apt-get -y install i3blocks
-  sudo apt-get -y install blueman
-  sudo apt-get -y install feh
-  sudo apt-get -y install scrot
 elif [[ "$platform" == "darwin" ]]; then
   echo "installing for mac"
   # install homebrew

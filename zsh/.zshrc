@@ -119,3 +119,5 @@ uv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35
 =00;36:*.spx=00;36:*.xspf=00;36:';
 export LS_COLORS
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+export PATH="$PATH:/usr/local/nvim-linux64/bin"
